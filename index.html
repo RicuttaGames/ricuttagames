@@ -6,55 +6,121 @@
     <title>Ricutta Games | Sitio Oficial de Brayan The Fox</title>
     <meta name="description" content="Sitio oficial de Ricutta Games. Conoce Brayan The Fox, un juego de plataformas 2D inspirado en Sonic, Pizza Tower y WarioWare, desarrollado en Godot Engine.">
     <meta name="keywords" content="Ricutta Games, Brayan The Fox, Godot Engine, juegos indie 2D, SAGE 2026, Kevin Arias, Funky.FLP">
+
     <style>
+        /* --- 1. DECLARACIÓN DE LA FUENTE OFICIAL --- */
+        @font-face {
+            font-family: 'Kaph';
+            src: url('Kaph-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Kaph';
+            src: url('Kaph-Italic.ttf') format('truetype');
+            font-weight: normal;
+            font-style: italic;
+        }
+
         :root {
-            --bg-color: #0f172a;       /* Azul oscuro muy elegante de fondo */
-            --card-bg: #1e293b;        /* Azul grisáceo para las tarjetas */
-            --text-main: #f8fafc;      /* Blanco casi puro para lectura clara */
-            --text-muted: #94a3b8;     /* Gris claro para textos secundarios */
-            --accent: #38bdf8;         /* Azul claro brillante / cian */
-            --accent-hover: #0ea5e9;   /* Azul un poco más intenso para hover */
+            --bg-main: #0f172a;        /* Azul oscuro de fondo */
+            --paper-bg: #fef3c7;       /* Tono crema pálido para el pergamino */
+            --card-bg: #ffffff;        /* Fondo blanco para tarjetas interiores */
+            --text-main: #111827;      /* Texto oscuro casi negro para lectura */
+            --text-muted: #4b5563;     /* Gris para textos secundarios */
+            --accent: #38bdf8;         /* Azul cian brillante de acento */
+            --accent-hover: #0ea5e9;   /* Azul más intenso para botones hover */
         }
 
         body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            /* --- 2. APLICACIÓN DEL PERGAMINO DE FONDO --- */
+            font-family: 'Kaph', Arial, sans-serif; /* Usamos Kaph como principal */
             line-height: 1.7;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: var(--bg-color);
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: var(--bg-main);
+            background-image: url('image_3.png'); /* Tu imagen de pergamino */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efecto chulo al hacer scroll */
             color: var(--text-main);
         }
 
+        /* Para que el texto normal no se vea pixelado, forzamos una fuente de apoyo si Kaph falla, 
+           pero mantenemos Kaph para los títulos y elementos clave */
+        p, ul { font-family: Arial, sans-serif; } /* Texto legible */
+        h1, h2, h3 { font-family: 'Kaph', Arial, sans-serif; } /* Títulos con la fuente del juego */
+
         header {
             text-align: center;
-            border-bottom: 2px solid #334155;
-            padding-bottom: 30px;
+            padding-bottom: 40px;
             margin-bottom: 40px;
+            border-bottom: 4px solid var(--accent);
+        }
+
+        /* --- 3. LOGOTIPO ENCABEZADO --- */
+        .logo-img {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 20px;
         }
 
         h1 {
             color: var(--accent);
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 0 #0f172a; /* Borde al texto para que resalte */
         }
 
         header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
+            color: var(--text-main);
+            font-size: 1.2rem;
+            margin-top: 10px;
+            background-color: rgba(255,255,255,0.7);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 8px;
         }
 
         h2, h3 {
             color: var(--accent);
+            text-shadow: 1px 1px 0 #111827;
         }
 
         .card {
             background: var(--card-bg);
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-            border-left: 5px solid var(--accent);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            border: 4px solid var(--text-main); /* Borde oscuro estilo cómic */
+        }
+
+        /* --- 4. ARTE DE BRAYAN CORRIENDO --- */
+        .hero-art {
+            display: block;
+            max-width: 200px;
+            margin: 0 auto 20px auto;
+            filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.2));
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .info-grid { grid-template-columns: 1fr; }
+        }
+
+        .wanted-poster {
+            width: 100%;
+            height: auto;
+            border: 4px solid var(--text-main);
+            image-rendering: pixelated; /* Importante para que no se vea borroso el arte pixel art */
         }
 
         ul {
@@ -62,10 +128,7 @@
         }
 
         li {
-            margin-bottom: 8px;
-        }
-
-        .tech-list li {
+            margin-bottom: 10px;
             color: var(--text-main);
         }
 
@@ -73,69 +136,88 @@
             list-style: none;
             padding: 0;
             display: flex;
-            gap: 15px;
+            gap: 20px;
+            justify-content: center;
             flex-wrap: wrap;
-        }
-
-        .links li {
-            margin-bottom: 0;
         }
 
         .btn {
             display: inline-block;
             background-color: var(--accent);
-            color: #0f172a;
-            padding: 10px 20px;
-            border-radius: 6px;
+            color: var(--text-main);
+            padding: 12px 25px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            font-family: 'Kaph', Arial, sans-serif;
             transition: background-color 0.2s, transform 0.1s;
+            border: 3px solid var(--text-main);
         }
 
         .btn:hover {
             background-color: var(--accent-hover);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
         footer {
             text-align: center;
             margin-top: 50px;
-            color: var(--text-muted);
+            color: var(--text-main);
             font-size: 0.9rem;
-            border-top: 1px solid #334155;
+            border-top: 2px solid var(--text-main);
             padding-top: 20px;
+            background-color: rgba(255,255,255,0.7);
+            border-radius: 8px;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
 
     <header>
+        <!-- Logo Oficial -->
+        <img src="image_8.png" alt="Ricutta Games Logo" class="logo-img">
         <h1>Ricutta Games</h1>
-        <p>Estudio independiente de desarrollo de videojuegos.</p>
+        <p>Estudio independiente de desarrollo de videojuegos</p>
     </header>
 
     <main>
         <section class="card">
             <h2>¿Quiénes Somos?</h2>
-            <p><strong>Ricutta Games</strong> (anteriormente conocido como <em>Electrónic Games</em> —nombre que surgió mientras comía pasta) no es solo un estudio enfocado en crear juegos, sino una iniciativa para construir una comunidad grande donde todos compartan ideas, artes y proyectos.</p>
+            <p><strong>Ricutta Games</strong> (anteriormente conocido como <em>Electrónic Games</em> —nombre que surgió mientras su creador comía pasta) no es solo un estudio enfocado en crear juegos, sino una iniciativa que busca construir una comunidad grande donde todos puedan compartir sus ideas, artes y proyectos.</p>
         </section>
 
         <section class="card">
             <h2>Nuestro Juego Principal: Brayan The Fox</h2>
-            <p><strong>Brayan The Fox</strong> es un juego 2D de acción y adrenalina pura. Su protagonista es Brayan, un zorro dedicado a robar diamantes por diferentes partes del mundo utilizando un peculiar <strong>mundo de bolsillo</strong>: un espacio oscuro lleno de estrellas, con una estética pintada a mano y puertas esparcidas al azar que conducen a lugares aleatorios.</p>
+            
+            <!-- Arte Principal de Brayan Corriendo -->
+            <img src="image_4.png" alt="Brayan The Fox Corriendo" class="hero-art">
+
+            <p><strong>Brayan The Fox</strong> es un juego 2D de acción y adrenalina pura. Su protagonista es Brayan, un zorro dedicado a robar diamantes por diferentes partes del mundo utilizando un peculiar <strong>mundo de bolsillo</strong>: un espacio oscuro lleno de estrellas, con una estética que parece pintada a mano y puertas esparcidas al azar que conducen a lugares aleatorios.</p>
             <p>El objetivo de Brayan es convertirse en el poseedor de todo el dinero del mundo, esquivando a la policía y a diversos monstruos en su camino.</p>
             
-            <h3>Inspiraciones y Estilo</h3>
-            <p>El juego bebe directamente de grandes referentes como <em>Sonic The Hedgehog</em>, <em>Pizza Tower</em> y la saga <em>WarioWare</em>.</p>
+            <div class="info-grid">
+                <div>
+                    <h3>Inspiraciones y Estilo</h3>
+                    <p>El juego bebe directamente de grandes referentes del género como <em>Sonic The Hedgehog</em>, <em>Pizza Tower</em> y la saga <em>WarioWare</em>.</p>
+                </div>
+                <div>
+                    <!-- El cartel de Wanted -->
+                    <img src="image_5.png" alt="Se Busca Brayan The Fox" class="wanted-poster card">
+                </div>
+            </div>
         </section>
 
         <section class="card">
-            <h2>Tecnología y Equipo</h2>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <img src="image_7.png" alt="Cara de Brayan Enfadado" style="width: 64px; height: 64px; image-rendering: pixelated;">
+                <h2>Tecnología y Equipo</h2>
+            </div>
             <ul class="tech-list">
-                <li><strong>Motor:</strong> Desarrollado en <em>Godot Engine 3.6</em> con <em>GDScript</em>.</li>
+                <li><strong>Motor:</strong> Desarrollado en <em>Godot Engine 3.6</em> utilizando el lenguaje <em>GDScript</em>.</li>
                 <li><strong>Arte y Diseño:</strong> Creado por <strong>Kevin Arias</strong>, fundador del estudio.</li>
-                <li><strong>Música:</strong> Compuesta por el creador de TikTok <strong>Funky.FLP</strong>.</li>
-                <li><strong>Herramientas:</strong> LibreSprite, freesound y recursos temporales para la demo.</li>
+                <li><strong>Música:</strong> Compuesta por el talentoso creador de TikTok <strong>Funky.FLP</strong>.</li>
+                <li><strong>Herramientas y Recursos:</strong> Elaborado con la ayuda de LibreSprite, freesound y recursos temporales para la demo.</li>
             </ul>
         </section>
 
@@ -145,12 +227,12 @@
         </section>
     </main>
 
-    <section class="links card">
-        <h2>Comunidad y Redes</h2>
-        <p>Únete a la comunidad y sigue el desarrollo del juego:</p>
+    <section class="links card" style="text-align: center;">
+        <h2>Comunidad y Redes Sociales</h2>
+        <p>Únete a la comunidad y sigue de cerca el desarrollo del juego:</p>
         <ul>
-            <li><a href="https://discord.gg/fpKkVwaK37" target="_blank" class="btn">🎮 Discord Oficial</a></li>
-            <li><a href="https://www.tiktok.com/@ricutta?_r=1&_t=ZS-98oQ6L02vQK" target="_blank" class="btn">🎵 TikTok (@ricutta)</a></li>
+            <li><a href="https://discord.gg/fpKkVwaK37" target="_blank" class="btn">🎮 Discord</a></li>
+            <li><a href="https://www.tiktok.com/@ricutta?_r=1&_t=ZS-98oQ6L02vQK" target="_blank" class="btn">🎵 TikTok</a></li>
         </ul>
     </section>
 
