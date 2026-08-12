@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ricutta Games | Estudio Independiente</title>
+    <meta name="description" content="Sitio oficial de Ricutta Games. Creadores de Brayan The Fox y proyectos indies desarrollados en Godot Engine.">
+    <meta name="keywords" content="Ricutta Games, Brayan The Fox, Godot Engine, juegos indie 2D, SAGE 2026, Kevin Arias, Funky.FLP">
     <style>
         @font-face { font-family: 'Kaph'; src: url('Kaph-Regular.ttf') format('truetype'); }
         
@@ -11,7 +13,9 @@
             --bg-main: #0f172a;
             --card-bg: #1e293b;
             --accent: #38bdf8;
+            --accent-hover: #0ea5e9;
             --text-light: #f1f5f9;
+            --text-muted: #94a3b8;
         }
 
         body {
@@ -24,87 +28,220 @@
             color: var(--text-light);
             margin: 0;
             padding: 20px;
+            line-height: 1.6;
         }
 
-        .container { max-width: 800px; margin: 0 auto; }
+        .container { max-width: 850px; margin: 0 auto; }
 
-        /* Logo Circular */
-        .profile-header { text-align: center; margin-bottom: 40px; }
+        /* Botones de redes sociales arriba */
+        .top-socials {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .btn-social {
+            background-color: var(--accent);
+            color: #0f172a;
+            padding: 8px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Kaph', sans-serif;
+            font-size: 0.85rem;
+            border: 2px solid #0f172a;
+            box-shadow: 0 3px 0 #0f172a;
+            transition: transform 0.1s;
+        }
+
+        .btn-social:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Logo Circular del Estudio */
+        .profile-header { text-align: center; margin-bottom: 35px; }
         .logo-circle {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            border: 5px solid var(--accent);
+            border: 4px solid var(--accent);
             object-fit: cover;
             margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
         }
+
+        h1, h2 { font-family: 'Kaph', sans-serif; color: var(--accent); }
+        h1 { font-size: 2.3rem; margin: 0 0 5px 0; text-shadow: 2px 2px 0 #000; }
+        .profile-header p { color: var(--text-muted); font-size: 1.05rem; margin: 0; }
 
         .card {
             background: var(--card-bg);
             padding: 30px;
             border-radius: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             border-left: 5px solid var(--accent);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
 
-        h1, h2 { font-family: 'Kaph', sans-serif; color: var(--accent); }
-        
-        /* Acordeón para juegos */
-        .game-details { display: none; margin-top: 20px; border-top: 1px solid #475569; padding-top: 20px; }
+        /* Acordeón para el juego */
+        .game-details { 
+            display: none; 
+            margin-top: 20px; 
+            border-top: 2px dashed #475569; 
+            padding-top: 20px; 
+        }
+
         .btn-toggle {
             background: var(--accent);
             color: var(--bg-main);
             border: none;
             padding: 10px 20px;
-            border-radius: 5px;
+            border-radius: 6px;
             font-family: 'Kaph', sans-serif;
             cursor: pointer;
             font-weight: bold;
+            margin-top: 10px;
+            transition: background-color 0.2s, transform 0.1s;
+            border: 2px solid #0f172a;
+            box-shadow: 0 3px 0 #0f172a;
         }
 
-        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; }
-        .wanted-poster { width: 100%; max-width: 200px; border-radius: 8px; image-rendering: pixelated; }
+        .btn-toggle:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .info-grid { 
+            display: grid; 
+            grid-template-columns: 1.2fr 0.8fr; 
+            gap: 20px; 
+            align-items: center; 
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .info-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Logo gigante del juego */
+        .game-logo-big { 
+            width: 100%; 
+            max-width: 280px; 
+            display: block; 
+            margin: 0 auto; 
+            image-rendering: pixelated; 
+            filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.3));
+        }
+
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; color: var(--text-light); }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid #334155;
+            padding-top: 20px;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
+
+    <!-- Botones de Redes Sociales Arriba -->
+    <div class="top-socials">
+        <a href="https://discord.gg/fpKkVwaK37" target="_blank" class="btn-social">🎮 Discord Oficial</a>
+        <a href="https://www.tiktok.com/@ricutta?_r=1&_t=ZS-98oQ6L02vQK" target="_blank" class="btn-social">🎵 TikTok (@ricutta)</a>
+    </div>
+
     <header class="profile-header">
         <img src="8edf72df59757decc74deca1f10bb685.png" alt="Logo Ricutta" class="logo-circle">
         <h1>Ricutta Games</h1>
-        <p>Estudio independiente | Desarrollando sueños en Godot</p>
+        <p>Estudio independiente de desarrollo de videojuegos</p>
     </header>
 
     <section class="card">
         <h2>¿Quiénes Somos?</h2>
-        <p>Somos un estudio enfocado en crear experiencias únicas y construir una comunidad donde compartir ideas y proyectos sea lo primero.</p>
+        <p><strong>Ricutta Games</strong> (anteriormente conocido como <em>Electrónic Games</em> —nombre que surgió mientras su creador comía pasta) no es solo un estudio enfocado en crear juegos, sino una iniciativa que busca construir una comunidad grande donde todos puedan compartir sus ideas, artes y proyectos.</p>
     </section>
 
+    <!-- CUADRADO 1: NUESTROS JUEGOS -->
     <section class="card">
         <h2>Nuestros Juegos</h2>
-        <p><strong>Brayan The Fox</strong></p>
-        <button class="btn-toggle" onclick="document.getElementById('brayan-info').style.display = (document.getElementById('brayan-info').style.display === 'block') ? 'none' : 'block'">Ver detalles</button>
+        <p>Espacio dedicado al catálogo de títulos desarrollados por el estudio. ¡Conoce nuestro proyecto principal actual abajo!</p>
+    </section>
+
+    <!-- CUADRADO 2: BRAYAN THE FOX CON ACORDEÓN -->
+    <section class="card">
+        <h2>Brayan The Fox</h2>
+        <p>Nuestro proyecto estrella. ¿Quieres conocer todos los detalles de este zorro ladrón de diamantes?</p>
+        
+        <button class="btn-toggle" onclick="toggleDetails()">Ver detalles del juego</button>
         
         <div id="brayan-info" class="game-details">
-            <p>Juego 2D de acción basado en un "mundo de bolsillo" oscuro y lleno de estrellas. Inspirado en Sonic, Pizza Tower y WarioWare.</p>
+            <p><strong>Brayan The Fox</strong> es un juego 2D de acción y adrenalina pura. Su protagonista es Brayan, un zorro dedicado a robar diamantes por diferentes partes del mundo utilizando un peculiar <strong>mundo de bolsillo</strong>: un espacio oscuro lleno de estrellas, con una estética que parece pintada a mano y puertas esparcidas al azar que conducen a lugares aleatorios.</p>
+            <p>El objetivo de Brayan es convertirse en el poseedor de todo el dinero del mundo, teniendo que esquivar a la policía y a diversos monstruos en su camino.</p>
+            
             <div class="info-grid">
                 <div>
+                    <h3>Inspiraciones y Estilo</h3>
+                    <p>El juego bebe directamente de grandes referentes del género como <em>Sonic The Hedgehog</em>, <em>Pizza Tower</em> y la saga <em>WarioWare</em>.</p>
+                    
+                    <h3 style="margin-top: 15px;">Tecnología y Equipo</h3>
                     <ul>
-                        <li>Motor: Godot Engine 3.6</li>
-                        <li>Arte: Kevin Arias</li>
-                        <li>Música: Funky.FLP</li>
+                        <li><strong>Motor:</strong> Desarrollado en <em>Godot Engine 3.6</em> utilizando <em>GDScript</em>.</li>
+                        <li><strong>Arte y Diseño:</strong> Creado por <strong>Kevin Arias</strong>, fundador del estudio.</li>
+                        <li><strong>Música:</strong> Compuesta por el creador de TikTok <strong>Funky.FLP</strong>.</li>
+                        <li><strong>Herramientas:</strong> LibreSprite, freesound y recursos para la demo de SAGE 2026.</li>
                     </ul>
                 </div>
-                <img src="Logo.png" class="wanted-poster">
+                <div>
+                    <!-- Logo del juego en grande como pediste -->
+                    <img src="Logo.png" alt="Logo Brayan The Fox" class="game-logo-big">
+                </div>
             </div>
         </div>
     </section>
 
     <section class="card">
-        <h2>Tecnología y SAGE 2026</h2>
-        <p>Estamos trabajando duro en la demo para SAGE 2026. Seguimos optimizando el código y puliendo cada píxel.</p>
+        <h2>Próximos Pasos: SAGE 2026</h2>
+        <p>¡El estudio dirá presente! <strong>Ricutta Games</strong> participará oficialmente en la edición de <strong>SAGE 2026</strong> con la demo jugable de <em>Brayan The Fox</em>.</p>
     </section>
+
+    <!-- Redes sociales también abajo por comodidad -->
+    <section class="card" style="text-align: center;">
+        <h2>Comunidad y Redes</h2>
+        <p>Únete y sigue de cerca el desarrollo:</p>
+        <div class="top-socials" style="margin-top: 15px; margin-bottom: 0;">
+            <a href="https://discord.gg/fpKkVwaK37" target="_blank" class="btn-social">🎮 Discord</a>
+            <a href="https://www.tiktok.com/@ricutta?_r=1&_t=ZS-98oQ6L02vQK" target="_blank" class="btn-social">🎵 TikTok</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Ricutta Games. Todos los derechos reservados.</p>
+    </footer>
+
 </div>
+
+<script>
+    function toggleDetails() {
+        const info = document.getElementById('brayan-info');
+        const btn = document.querySelector('.btn-toggle');
+        if (info.style.display === 'block') {
+            info.style.display = 'none';
+            btn.innerText = 'Ver detalles del juego';
+        } else {
+            info.style.display = 'block';
+            btn.innerText = 'Ocultar detalles';
+        }
+    }
+</script>
 
 </body>
 </html>
