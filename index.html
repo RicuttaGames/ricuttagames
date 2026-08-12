@@ -7,45 +7,135 @@
     <meta name="description" content="Sitio oficial de Ricutta Games. Conoce Brayan The Fox, un juego de plataformas 2D inspirado en Sonic, Pizza Tower y WarioWare, desarrollado en Godot Engine.">
     <meta name="keywords" content="Ricutta Games, Brayan The Fox, Godot Engine, juegos indie 2D, SAGE 2026, Kevin Arias, Funky.FLP">
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 900px; margin: 30px auto; padding: 20px; background-color: #121212; color: #e0e0e0; }
-        header { border-bottom: 2px solid #ff4757; padding-bottom: 20px; margin-bottom: 30px; }
-        h1, h2, h3 { color: #ff4757; }
-        .card { background: #1e1e1e; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #ff4757; }
-        .links ul { list-style: none; padding: 0; }
-        .links li { margin-bottom: 10px; }
-        .links a { color: #2ed573; text-decoration: none; font-weight: bold; }
-        .links a:hover { text-decoration: underline; }
+        :root {
+            --bg-color: #0f172a;       /* Azul oscuro muy elegante de fondo */
+            --card-bg: #1e293b;        /* Azul grisáceo para las tarjetas */
+            --text-main: #f8fafc;      /* Blanco casi puro para lectura clara */
+            --text-muted: #94a3b8;     /* Gris claro para textos secundarios */
+            --accent: #38bdf8;         /* Azul claro brillante / cian */
+            --accent-hover: #0ea5e9;   /* Azul un poco más intenso para hover */
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: var(--accent);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        h2, h3 {
+            color: var(--accent);
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+            border-left: 5px solid var(--accent);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .tech-list li {
+            color: var(--text-main);
+        }
+
+        .links ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .links li {
+            margin-bottom: 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #0f172a;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid #334155;
+            padding-top: 20px;
+        }
     </style>
 </head>
 <body>
 
     <header>
         <h1>Ricutta Games</h1>
-        <p>Estudio de desarrollo independiente de videojuegos.</p>
+        <p>Estudio independiente de desarrollo de videojuegos.</p>
     </header>
 
     <main>
         <section class="card">
             <h2>¿Quiénes Somos?</h2>
-            <p><strong>Ricutta Games</strong> (anteriormente conocido como <em>Electrónic Games</em>—nombre que surgió mientras su creador comía pasta) no es solo un estudio enfocado en crear juegos, sino una iniciativa que busca construir una comunidad grande donde todos puedan compartir sus ideas, artes y proyectos.</p>
+            <p><strong>Ricutta Games</strong> (anteriormente conocido como <em>Electrónic Games</em> —nombre que surgió mientras comía pasta) no es solo un estudio enfocado en crear juegos, sino una iniciativa para construir una comunidad grande donde todos compartan ideas, artes y proyectos.</p>
         </section>
 
         <section class="card">
             <h2>Nuestro Juego Principal: Brayan The Fox</h2>
-            <p><strong>Brayan The Fox</strong> es un juego 2D de acción y adrenalina pura. Su protagonista es Brayan, un zorro dedicado a robar diamantes por diferentes partes del mundo utilizando un peculiar <strong>mundo de bolsillo</strong>: un espacio oscuro lleno de estrellas, con una estética que parece pintada a mano y puertas esparcidas al azar que conducen a lugares aleatorios.</p>
-            <p>El objetivo de Brayan es convertirse en el poseedor de todo el dinero del mundo, teniendo que esquivar a la policía y a diversos monstruos en su camino.</p>
+            <p><strong>Brayan The Fox</strong> es un juego 2D de acción y adrenalina pura. Su protagonista es Brayan, un zorro dedicado a robar diamantes por diferentes partes del mundo utilizando un peculiar <strong>mundo de bolsillo</strong>: un espacio oscuro lleno de estrellas, con una estética pintada a mano y puertas esparcidas al azar que conducen a lugares aleatorios.</p>
+            <p>El objetivo de Brayan es convertirse en el poseedor de todo el dinero del mundo, esquivando a la policía y a diversos monstruos en su camino.</p>
             
             <h3>Inspiraciones y Estilo</h3>
-            <p>El juego bebe directamente de grandes referentes del género como <em>Sonic The Hedgehog</em>, <em>Pizza Tower</em> y la saga <em>WarioWare</em>.</p>
+            <p>El juego bebe directamente de grandes referentes como <em>Sonic The Hedgehog</em>, <em>Pizza Tower</em> y la saga <em>WarioWare</em>.</p>
         </section>
 
         <section class="card">
-            <h2>Tecnología y Equipo de Desarrollo</h2>
-            <ul>
-                <li><strong>Motor:</strong> Desarrollado en <em>Godot Engine 3.6</em> utilizando el lenguaje <em>GDScript</em>.</li>
+            <h2>Tecnología y Equipo</h2>
+            <ul class="tech-list">
+                <li><strong>Motor:</strong> Desarrollado en <em>Godot Engine 3.6</em> con <em>GDScript</em>.</li>
                 <li><strong>Arte y Diseño:</strong> Creado por <strong>Kevin Arias</strong>, fundador del estudio.</li>
-                <li><strong>Música:</strong> Compuesta por el talentoso creador de TikTok <strong>Funky.FLP</strong>.</li>
-                <li><strong>Herramientas y Recursos:</strong> Elaborado con la ayuda de LibreSprite, freesound y recursos temporales para la demo.</li>
+                <li><strong>Música:</strong> Compuesta por el creador de TikTok <strong>Funky.FLP</strong>.</li>
+                <li><strong>Herramientas:</strong> LibreSprite, freesound y recursos temporales para la demo.</li>
             </ul>
         </section>
 
@@ -56,13 +146,17 @@
     </main>
 
     <section class="links card">
-        <h2>Comunidad y Redes Sociales</h2>
-        <p>Únete a la comunidad y sigue de cerca el desarrollo del juego:</p>
+        <h2>Comunidad y Redes</h2>
+        <p>Únete a la comunidad y sigue el desarrollo del juego:</p>
         <ul>
-            <li>🎮 <strong>Discord:</strong> <a href="https://discord.gg/fpKkVwaK37" target="_blank">Únete al servidor oficial</a></li>
-            <li>🎵 <strong>TikTok:</strong> <a href="https://www.tiktok.com/@ricutta?_r=1&_t=ZS-98oQ6L02vQK" target="_blank">@ricutta en TikTok</a></li>
+            <li><a href="https://discord.gg/fpKkVwaK37" target="_blank" class="btn">🎮 Discord Oficial</a></li>
+            <li><a href="https://www.tiktok.com/@ricutta?_r=1&_t=ZS-98oQ6L02vQK" target="_blank" class="btn">🎵 TikTok (@ricutta)</a></li>
         </ul>
     </section>
+
+    <footer>
+        <p>&copy; 2026 Ricutta Games. Todos los derechos reservados.</p>
+    </footer>
 
 </body>
 </html>
