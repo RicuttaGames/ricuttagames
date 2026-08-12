@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ricutta Games | Sitio Oficial de Brayan The Fox</title>
-    <meta name="description" content="Sitio oficial de Ricutta Games. Conoce Brayan The Fox, un juego de plataformas 2D inspirado en Sonic, Pizza Tower y WarioWare, desarrollado en Godot Engine.">
-    <meta name="keywords" content="Ricutta Games, Brayan The Fox, Godot Engine, juegos indie 2D, SAGE 2026, Kevin Arias, Funky.FLP">
+    <title>Ricutta Games | Estudio Independiente</title>
+    <meta name="description" content="Sitio oficial de Ricutta Games. Creadores de Brayan The Fox y proyectos indies desarrollados en Godot Engine.">
+    <meta name="keywords" content="Ricutta Games, Brayan The Fox, Godot Engine, juegos indie 2D, SAGE 2026, Kevin Arias">
 
     <style>
-        /* --- FUENTE OFICIAL --- */
         @font-face {
             font-family: 'Kaph';
             src: url('Kaph-Regular.ttf') format('truetype');
@@ -24,15 +23,12 @@
 
         :root {
             --bg-main: #0f172a;        
-            --card-bg: #ffffff;        
             --text-main: #111827;      
-            --text-muted: #4b5563;     
             --accent: #38bdf8;         
             --accent-hover: #0ea5e9;   
         }
 
         body {
-            /* Usamos la madera con la botella (Menu logo.png) como fondo general de la página */
             font-family: 'Kaph', Arial, sans-serif;
             line-height: 1.7;
             max-width: 960px;
@@ -47,14 +43,14 @@
         }
 
         p, ul { font-family: Arial, sans-serif; }
-        h1, h2, h3 { font-family: 'Kaph', Arial, sans-serif; }
+        h1, h2, h3 { font-family: 'Kaph', Arial, sans-serif; text-align: center; }
 
         header {
             text-align: center;
             padding: 30px;
             margin-bottom: 40px;
             border-bottom: 4px solid var(--accent);
-            background-color: rgba(15, 23, 42, 0.85); /* Fondo semitransparente para que resalte el logo */
+            background-color: rgba(15, 23, 42, 0.85);
             border-radius: 15px;
         }
 
@@ -75,18 +71,29 @@
             color: #e2e8f0;
             font-size: 1.1rem;
             margin-top: 10px;
+            text-align: center;
+            font-family: Arial, sans-serif;
         }
 
-        h2, h3 {
-            color: #0284c7;
+        h2 {
+            color: #1e1b4b;
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 20px;
         }
 
-        /* Usamos el pergamino (Controles_remap.png) como fondo para las tarjetas principales */
+        h3 {
+            color: #1e1b4b;
+            font-size: 1.2rem;
+            text-align: left;
+        }
+
+        /* Tarjeta con margen interior ajustado para que los textos no toquen los bordes del pergamino */
         .card {
-            background-color: #fde047; /* Respaldo por si carga lento la imagen */
+            background-color: #fde047;
             background-image: url('Controles_remap.png');
             background-size: 100% 100%;
-            padding: 40px;
+            padding: 50px 60px; /* Margen interior generoso para evitar los bordes deformes */
             border-radius: 12px;
             margin-bottom: 30px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
@@ -95,8 +102,8 @@
 
         .hero-art {
             display: block;
-            max-width: 140px;
-            margin: 0 auto 20px auto;
+            max-width: 130px;
+            margin: 0 auto 15px auto;
             image-rendering: pixelated;
             filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.3));
         }
@@ -111,11 +118,12 @@
 
         @media (max-width: 768px) {
             .info-grid { grid-template-columns: 1fr; }
+            .card { padding: 40px 30px; } /* Ajuste para pantallas chicas */
         }
 
         .wanted-poster {
             width: 100%;
-            max-width: 280px;
+            max-width: 240px;
             display: block;
             margin: 0 auto;
             border: 3px solid #1e1b4b;
@@ -178,7 +186,7 @@
 <body>
 
     <header>
-        <!-- Logo Ricutta -->
+        <!-- Logo Ricutta (Estudio) -->
         <img src="8edf72df59757decc74deca1f10bb685.png" alt="Ricutta Games Logo" class="logo-img">
         <h1>Ricutta Games</h1>
         <p>Estudio independiente de desarrollo de videojuegos</p>
@@ -190,14 +198,14 @@
             <p><strong>Ricutta Games</strong> (anteriormente conocido como <em>Electrónic Games</em> —nombre que surgió mientras su creador comía pasta) no es solo un estudio enfocado en crear juegos, sino una iniciativa que busca construir una comunidad grande donde todos puedan compartir sus ideas, artes y proyectos.</p>
         </section>
 
+        <!-- SECCIÓN DESTINADA AL JUEGO PRINCIPAL -->
         <section class="card">
-            <h2>Nuestro Juego Principal: Brayan The Fox</h2>
+            <h2>Nuestros Juegos: Brayan The Fox</h2>
             
-            <!-- Icono del juego (Brayan corriendo) -->
             <img src="Icon.png" alt="Brayan The Fox Icon" class="hero-art">
 
-            <p><strong>Brayan The Fox</strong> es un juego 2D de acción y adrenalina pura. Su protagonista es Brayan, un zorro dedicado a robar diamantes por diferentes partes del mundo utilizando un peculiar <strong>mundo de bolsillo</strong>: un espacio oscuro lleno de estrellas, con una estética que parece pintada a mano y puertas esparcidas al azar que conducen a lugares aleatorios.</p>
-            <p>El objetivo de Brayan es convertirse en el poseedor de todo el dinero del mundo, esquivando a la policía y a diversos monstruos en su camino.</p>
+            <p><strong>Brayan The Fox</strong> es nuestro título principal: un juego 2D de acción y adrenalina pura. Su protagonista es Brayan, un zorro dedicado a robar diamantes por diferentes partes del mundo utilizando un peculiar <strong>mundo de bolsillo</strong>: un espacio oscuro lleno de estrellas, con una estética pintada a mano y puertas esparcidas al azar.</p>
+            <p>El objetivo es convertirse en el poseedor de todo el dinero del mundo, esquivando a la policía y a diversos monstruos.</p>
             
             <div class="info-grid">
                 <div>
@@ -205,7 +213,6 @@
                     <p>El juego bebe directamente de grandes referentes del género como <em>Sonic The Hedgehog</em>, <em>Pizza Tower</em> y la saga <em>WarioWare</em>.</p>
                 </div>
                 <div>
-                    <!-- Logo del juego / Cartel de Se Busca -->
                     <img src="Logo.png" alt="Brayan The Fox Logo" class="wanted-poster">
                 </div>
             </div>
@@ -217,19 +224,19 @@
                 <li><strong>Motor:</strong> Desarrollado en <em>Godot Engine 3.6</em> utilizando el lenguaje <em>GDScript</em>.</li>
                 <li><strong>Arte y Diseño:</strong> Creado por <strong>Kevin Arias</strong>, fundador del estudio.</li>
                 <li><strong>Música:</strong> Compuesta por el talentoso creador de TikTok <strong>Funky.FLP</strong>.</li>
-                <li><strong>Herramientas y Recursos:</strong> Elaborado con la ayuda de LibreSprite, freesound y recursos temporales para la demo.</li>
+                <li><strong>Herramientas:</strong> LibreSprite, freesound y recursos temporales para la demo.</li>
             </ul>
         </section>
 
         <section class="card">
             <h2>Próximos Pasos: SAGE 2026</h2>
-            <p>¡El estudio dirá presente! <strong>Ricutta Games</strong> participará oficialmente en la edición de <strong>SAGE 2026</strong> con la demo jugable de <em>Brayan The Fox</em>.</p>
+            <p>¡El estudio dirá presente! <strong>Ricutta Games</strong> participará oficialmente en la edición de <strong>SAGE 2026</strong> con la demo jugable de nuestro proyecto estrella.</p>
         </section>
     </main>
 
     <section class="links card" style="text-align: center;">
         <h2>Comunidad y Redes Sociales</h2>
-        <p>Únete a la comunidad y sigue de cerca el desarrollo del juego:</p>
+        <p>Únete a la comunidad y sigue de cerca nuestros proyectos:</p>
         <ul>
             <li><a href="https://discord.gg/fpKkVwaK37" target="_blank" class="btn">🎮 Discord</a></li>
             <li><a href="https://www.tiktok.com/@ricutta?_r=1&_t=ZS-98oQ6L02vQK" target="_blank" class="btn">🎵 TikTok</a></li>
