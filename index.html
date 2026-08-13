@@ -14,6 +14,8 @@
             --card-bg: #1e293b;
             --accent: #38bdf8;
             --accent-hover: #0ea5e9;
+            --itch-color: #fa5c5c;
+            --itch-hover: #e04848;
             --text-light: #f1f5f9;
             --text-muted: #94a3b8;
         }
@@ -53,12 +55,22 @@
             font-size: 0.85rem;
             border: 2px solid #0f172a;
             box-shadow: 0 3px 0 #0f172a;
-            transition: transform 0.1s;
+            transition: transform 0.1s, background-color 0.2s;
         }
 
         .btn-social:hover {
             background-color: var(--accent-hover);
             transform: translateY(-2px);
+        }
+
+        /* Botón especial para itch.io */
+        .btn-itch {
+            background-color: var(--itch-color);
+            color: #ffffff;
+        }
+
+        .btn-itch:hover {
+            background-color: var(--itch-hover);
         }
 
         /* Logo Circular del Estudio */
@@ -155,6 +167,7 @@
 
     <!-- Botones de Redes Sociales Arriba -->
     <div class="top-socials">
+        <a href="https://ricutta.itch.io/brayan-the-fox" target="_blank" class="btn-social btn-itch">🕹️ itch.io</a>
         <a href="https://discord.gg/fpKkVwaK37" target="_blank" class="btn-social">🎮 Discord Oficial</a>
         <a href="https://www.tiktok.com/@ricutta?_r=1&_t=ZS-98oQ6L02vQK" target="_blank" class="btn-social">🎵 TikTok (@ricutta)</a>
     </div>
@@ -181,7 +194,10 @@
         <h2>Brayan The Fox</h2>
         <p>Nuestro proyecto estrella. ¿Quieres conocer todos los detalles de este zorro ladrón de diamantes?</p>
         
-        <button class="btn-toggle" onclick="toggleDetails()">Ver detalles del juego</button>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <button class="btn-toggle" onclick="toggleDetails()">Ver detalles del juego</button>
+            <a href="https://ricutta.itch.io/brayan-the-fox" target="_blank" class="btn-social btn-itch" style="margin-top: 10px; display: inline-block;">🕹️ Página en itch.io</a>
+        </div>
         
         <div id="brayan-info" class="game-details">
             <p><strong>Brayan The Fox</strong> es un juego 2D de acción y adrenalina pura. Su protagonista es Brayan, un zorro dedicado a robar diamantes por diferentes partes del mundo utilizando un peculiar <strong>mundo de bolsillo</strong>: un espacio oscuro lleno de estrellas, con una estética que parece pintada a mano y puertas esparcidas al azar que conducen a lugares aleatorios.</p>
@@ -201,7 +217,7 @@
                     </ul>
                 </div>
                 <div>
-                    <!-- Logo del juego en grande como pediste -->
+                    <!-- Logo del juego en grande -->
                     <img src="Logo.png" alt="Logo Brayan The Fox" class="game-logo-big">
                 </div>
             </div>
@@ -210,7 +226,7 @@
 
     <section class="card">
         <h2>Próximos Pasos: SAGE 2026</h2>
-        <p>¡El estudio dirá presente! <strong>Ricutta Games</strong> participará oficialmente en la edición de <strong>SAGE 2026</strong> con la demo jugable de <em>Brayan The Fox</em>.</p>
+        <p>¡El estudio dirá presente! <strong>Ricutta Games</strong> participará oficialmente en la edición de <strong>SAGE 2026</strong> con la demo jugable de <em>Brayan The Fox</em>. Puedes seguir la página del proyecto directamente desde <a href="https://ricutta.itch.io/brayan-the-fox" target="_blank" style="color: var(--accent); font-weight: bold;">nuestro itch.io</a>.</p>
     </section>
 
     <!-- Redes sociales también abajo por comodidad -->
@@ -218,6 +234,7 @@
         <h2>Comunidad y Redes</h2>
         <p>Únete y sigue de cerca el desarrollo:</p>
         <div class="top-socials" style="margin-top: 15px; margin-bottom: 0;">
+            <a href="https://ricutta.itch.io/brayan-the-fox" target="_blank" class="btn-social btn-itch">🕹️ itch.io</a>
             <a href="https://discord.gg/fpKkVwaK37" target="_blank" class="btn-social">🎮 Discord</a>
             <a href="https://www.tiktok.com/@ricutta?_r=1&_t=ZS-98oQ6L02vQK" target="_blank" class="btn-social">🎵 TikTok</a>
         </div>
