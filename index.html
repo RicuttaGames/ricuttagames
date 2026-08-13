@@ -35,6 +35,29 @@
 
         .container { max-width: 850px; margin: 0 auto; }
 
+        /* Botón Flotante de Idioma */
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--accent);
+            color: #0f172a;
+            border: 2px solid #0f172a;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-family: 'Kaph', sans-serif;
+            font-size: 0.85rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            transition: transform 0.1s, background-color 0.2s;
+        }
+
+        .lang-switch:hover {
+            background: var(--accent-hover);
+            transform: scale(1.05);
+        }
+
         /* Botones de redes sociales arriba */
         .top-socials {
             display: flex;
@@ -150,6 +173,7 @@
 
         @media (max-width: 768px) {
             .info-grid { grid-template-columns: 1fr; }
+            .lang-switch { top: 10px; right: 10px; font-size: 0.75rem; padding: 6px 10px; }
         }
 
         /* Logo gigante del juego */
@@ -177,30 +201,35 @@
 </head>
 <body>
 
+<!-- Botón Flotante para cambiar idioma -->
+<button class="lang-switch" onclick="toggleLanguage()">🌐 ES / EN</button>
+
 <div class="container">
 
     <!-- Botones de Redes Sociales Arriba -->
     <div class="top-socials">
         <a href="https://ricutta.itch.io/brayan-the-fox" target="_blank" class="btn-social btn-itch">🕹️ itch.io</a>
-        <a href="https://discord.gg/fpKkVwaK37" target="_blank" class="btn-social">🎮 Discord Oficial</a>
+        <a href="https://discord.gg/fpKkVwaK37" target="_blank" class="btn-social" data-es="🎮 Discord Oficial" data-en="🎮 Official Discord">🎮 Discord Oficial</a>
         <a href="https://www.tiktok.com/@ricutta?_r=1&_t=ZS-98oQ6L02vQK" target="_blank" class="btn-social">🎵 TikTok (@ricutta)</a>
     </div>
 
     <header class="profile-header">
         <img src="logo-ricutta.png" alt="Logo Ricutta" class="logo-circle">
         <h1>Ricutta Games</h1>
-        <p>Estudio independiente de desarrollo de videojuegos</p>
+        <p data-es="Estudio independiente de desarrollo de videojuegos" data-en="Independent game development studio">Estudio independiente de desarrollo de videojuegos</p>
     </header>
 
     <section class="card">
-        <h2>¿Quiénes Somos?</h2>
-        <p><strong>Ricutta Games</strong> (anteriormente conocido como <em>Electrónic Games</em> —nombre que surgió mientras su creador comía pasta) no es solo un estudio enfocado en crear juegos, sino una iniciativa que busca construir una comunidad grande donde todos puedan compartir sus ideas, artes y proyectos.</p>
+        <h2 data-es="¿Quiénes Somos?" data-en="About Us">¿Quiénes Somos?</h2>
+        <p data-es="<strong>Ricutta Games</strong> (anteriormente conocido como <em>Electrónic Games</em> —nombre que surgió mientras su creador comía pasta) no es solo un estudio enfocado en crear juegos, sino una iniciativa que busca construir una comunidad grande donde todos puedan compartir sus ideas, artes y proyectos." data-en="<strong>Ricutta Games</strong> (formerly known as <em>Electrónic Games</em> —a name that came up while its creator was eating pasta) is not just a studio focused on making games, but an initiative aiming to build a great community where everyone can share their ideas, art, and projects.">
+            <strong>Ricutta Games</strong> (anteriormente conocido como <em>Electrónic Games</em> —nombre que surgió mientras su creador comía pasta) no es solo un estudio enfocado en crear juegos, sino una iniciativa que busca construir una comunidad grande donde todos puedan compartir sus ideas, artes y proyectos.
+        </p>
     </section>
 
     <!-- CUADRADO 1: NUESTROS JUEGOS -->
     <section class="card">
-        <h2>Nuestros Juegos</h2>
-        <p>Espacio dedicado al catálogo de títulos desarrollados por el estudio. ¡Conoce nuestro proyecto principal actual abajo!</p>
+        <h2 data-es="Nuestros Juegos" data-en="Our Games">Nuestros Juegos</h2>
+        <p data-es="Espacio dedicado al catálogo de títulos desarrollados por el estudio. ¡Conoce nuestro proyecto principal actual abajo!" data-en="A space dedicated to the studio's game catalog. Check out our main project below!">Espacio dedicado al catálogo de títulos desarrollados por el estudio. ¡Conoce nuestro proyecto principal actual abajo!</p>
     </section>
 
     <!-- CUADRADO 2: BRAYAN THE FOX CON ACORDEÓN E ÍCONO -->
@@ -209,32 +238,35 @@
             <img src="icon-brayan-the-fox.png" alt="Icono Brayan The Fox" class="game-icon-small">
             <h2 style="margin: 0;">Brayan The Fox</h2>
         </div>
-        <p style="margin-top: 15px;">Nuestro proyecto estrella. ¿Quieres conocer todos los detalles de este zorro ladrón de diamantes?</p>
+        <p style="margin-top: 15px;" data-es="Nuestro proyecto estrella. ¿Quieres conocer todos los detalles de este zorro ladrón de diamantes?" data-en="Our flagship project. Want to know all the details about this diamond-thief fox?">Nuestro proyecto estrella. ¿Quieres conocer todos los detalles de este zorro ladrón de diamantes?</p>
         
         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <button class="btn-toggle" onclick="toggleDetails()">Ver detalles del juego</button>
-            <a href="https://ricutta.itch.io/brayan-the-fox" target="_blank" class="btn-social btn-itch" style="margin-top: 10px; display: inline-block;">🕹️ Página en itch.io</a>
+            <button class="btn-toggle" onclick="toggleDetails()" id="btn-details" data-es="Ver detalles del juego" data-en="Show game details">Ver detalles del juego</button>
+            <a href="https://ricutta.itch.io/brayan-the-fox" target="_blank" class="btn-social btn-itch" style="margin-top: 10px; display: inline-block;" data-es="🕹️ Página en itch.io" data-en="🕹️ itch.io Page">🕹️ Página en itch.io</a>
         </div>
         
         <div id="brayan-info" class="game-details">
-            <p><strong>Brayan The Fox</strong> es un juego 2D de acción y adrenalina pura. Su protagonista es Brayan, un zorro dedicado a robar diamantes por diferentes partes del mundo utilizando un peculiar <strong>mundo de bolsillo</strong>: un espacio oscuro lleno de estrellas, con una estética que parece pintada a mano y puertas esparcidas al azar que conducen a lugares aleatorios.</p>
-            <p>El objetivo de Brayan es convertirse en el poseedor de todo el dinero del mundo, teniendo que esquivar a la policía y a diversos monstruos en su camino.</p>
+            <p data-es="<strong>Brayan The Fox</strong> es un juego 2D de acción y adrenalina pura. Su protagonista es Brayan, un zorro dedicado a robar diamantes por diferentes partes del mundo utilizando un peculiar <strong>mundo de bolsillo</strong>: un espacio oscuro lleno de estrellas, con una estética que parece pintada a mano y puertas esparcidas al azar que conducen a lugares aleatorios." data-en="<strong>Brayan The Fox</strong> is a 2D pure adrenaline action game. Its protagonist is Brayan, a fox dedicated to stealing diamonds across different parts of the world using a unique <strong>pocket world</strong>: a dark space full of stars, with a hand-painted aesthetic and random doors leading to random places.">
+                <strong>Brayan The Fox</strong> es un juego 2D de acción y adrenalina pura. Su protagonista es Brayan, un zorro dedicado a robar diamantes por diferentes partes del mundo utilizando un peculiar <strong>mundo de bolsillo</strong>: un espacio oscuro lleno de estrellas, con una estética que parece pintada a mano y puertas esparcidas al azar que conducen a lugares aleatorios.
+            </p>
+            <p data-es="El objetivo de Brayan es convertirse en el poseedor de todo el dinero del mundo, teniendo que esquivar a la policía y a diversos monstruos en su camino." data-en="Brayan's goal is to become the owner of all the money in the world, having to dodge the police and various monsters along the way.">
+                El objetivo de Brayan es convertirse en el poseedor de todo el dinero del mundo, teniendo que esquivar a la policía y a diversos monstruos en su camino.
+            </p>
             
             <div class="info-grid">
                 <div>
-                    <h3>Inspiraciones y Estilo</h3>
-                    <p>El juego bebe directamente de grandes referentes del género como <em>Sonic The Hedgehog</em>, <em>Pizza Tower</em> y la saga <em>WarioWare</em>.</p>
+                    <h3 data-es="Inspiraciones y Estilo" data-en="Inspirations & Style">Inspiraciones y Estilo</h3>
+                    <p data-es="El juego bebe directamente de grandes referentes del género como <em>Sonic The Hedgehog</em>, <em>Pizza Tower</em> y la saga <em>WarioWare</em>." data-en="The game takes direct inspiration from genre classics like <em>Sonic The Hedgehog</em>, <em>Pizza Tower</em>, and the <em>WarioWare</em> series.">El juego bebe directamente de grandes referentes del género como <em>Sonic The Hedgehog</em>, <em>Pizza Tower</em> y la saga <em>WarioWare</em>.</p>
                     
-                    <h3 style="margin-top: 15px;">Tecnología y Equipo</h3>
+                    <h3 style="margin-top: 15px;" data-es="Tecnología y Equipo" data-en="Tech & Team">Tecnología y Equipo</h3>
                     <ul>
-                        <li><strong>Motor:</strong> Desarrollado en <em>Godot Engine 3.6</em> utilizando <em>GDScript</em>.</li>
-                        <li><strong>Arte y Diseño:</strong> Creado por <strong>Kevin Arias</strong>, fundador del estudio.</li>
-                        <li><strong>Música:</strong> Compuesta por el creador de TikTok <strong>Funky.FLP</strong>.</li>
-                        <li><strong>Herramientas:</strong> LibreSprite, freesound y recursos para la demo de SAGE 2026.</li>
+                        <li data-es="<strong>Motor:</strong> Desarrollado en <em>Godot Engine 3.6</em> utilizando <em>GDScript</em>." data-en="<strong>Engine:</strong> Developed in <em>Godot Engine 3.6</em> using <em>GDScript</em>."><strong>Motor:</strong> Desarrollado en <em>Godot Engine 3.6</em> utilizando <em>GDScript</em>.</li>
+                        <li data-es="<strong>Arte y Diseño:</strong> Creado por <strong>Kevin Arias</strong>, fundador del estudio." data-en="<strong>Art & Design:</strong> Created by <strong>Kevin Arias</strong>, studio founder."><strong>Arte y Diseño:</strong> Creado por <strong>Kevin Arias</strong>, fundador del estudio.</li>
+                        <li data-es="<strong>Música:</strong> Compuesta por el creador de TikTok <strong>Funky.FLP</strong>." data-en="<strong>Music:</strong> Composed by TikTok creator <strong>Funky.FLP</strong>."><strong>Música:</strong> Compuesta por el creador de TikTok <strong>Funky.FLP</strong>.</li>
+                        <li data-es="<strong>Herramientas:</strong> LibreSprite, freesound y recursos para la demo de SAGE 2026." data-en="<strong>Tools:</strong> LibreSprite, freesound, and assets for SAGE 2026 demo."><strong>Herramientas:</strong> LibreSprite, freesound y recursos para la demo de SAGE 2026.</li>
                     </ul>
                 </div>
                 <div>
-                    <!-- Logo del juego en grande -->
                     <img src="logo-brayan-the-fox.png" alt="Logo Brayan The Fox" class="game-logo-big">
                 </div>
             </div>
@@ -242,37 +274,58 @@
     </section>
 
     <section class="card">
-        <h2>Próximos Pasos: SAGE 2026</h2>
-        <p>¡El estudio dirá presente! <strong>Ricutta Games</strong> participará oficialmente en la edición de <strong>SAGE 2026</strong> con la demo jugable de <em>Brayan The Fox</em>. Puedes seguir la página del proyecto directamente desde <a href="https://ricutta.itch.io/brayan-the-fox" target="_blank" style="color: var(--accent); font-weight: bold;">nuestro itch.io</a>.</p>
+        <h2 data-es="Próximos Pasos: SAGE 2026" data-en="Next Steps: SAGE 2026">Próximos Pasos: SAGE 2026</h2>
+        <p data-es="¡El estudio dirá presente! <strong>Ricutta Games</strong> participará oficialmente en la edición de <strong>SAGE 2026</strong> con la demo jugable de <em>Brayan The Fox</em>. Puedes seguir la página del proyecto directamente desde <a href='https://ricutta.itch.io/brayan-the-fox' target='_blank' style='color: var(--accent); font-weight: bold;'>nuestro itch.io</a>." data-en="The studio will be there! <strong>Ricutta Games</strong> will officially participate in <strong>SAGE 2026</strong> with the playable demo of <em>Brayan The Fox</em>. You can follow the project directly on <a href='https://ricutta.itch.io/brayan-the-fox' target='_blank' style='color: var(--accent); font-weight: bold;'>our itch.io</a>.">
+            ¡El estudio dirá presente! <strong>Ricutta Games</strong> participará oficialmente en la edición de <strong>SAGE 2026</strong> con la demo jugable de <em>Brayan The Fox</em>. Puedes seguir la página del proyecto directamente desde <a href="https://ricutta.itch.io/brayan-the-fox" target="_blank" style="color: var(--accent); font-weight: bold;">nuestro itch.io</a>.
+        </p>
     </section>
 
-    <!-- Redes sociales también abajo por comodidad -->
+    <!-- Redes sociales abajo -->
     <section class="card" style="text-align: center;">
-        <h2>Comunidad y Redes</h2>
-        <p>Únete y sigue de cerca el desarrollo:</p>
+        <h2 data-es="Comunidad y Redes" data-en="Community & Socials">Comunidad y Redes</h2>
+        <p data-es="Únete y sigue de cerca el desarrollo:" data-en="Join us and follow the development closely:">Únete y sigue de cerca el desarrollo:</p>
         <div class="top-socials" style="margin-top: 15px; margin-bottom: 0;">
             <a href="https://ricutta.itch.io/brayan-the-fox" target="_blank" class="btn-social btn-itch">🕹️ itch.io</a>
-            <a href="https://discord.gg/fpKkVwaK37" target="_blank" class="btn-social">🎮 Discord</a>
+            <a href="https://discord.gg/fpKkVwaK37" target="_blank" class="btn-social" data-es="🎮 Discord" data-en="🎮 Discord">🎮 Discord</a>
             <a href="https://www.tiktok.com/@ricutta?_r=1&_t=ZS-98oQ6L02vQK" target="_blank" class="btn-social">🎵 TikTok</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Ricutta Games. Todos los derechos reservados.</p>
+        <p data-es="&copy; 2026 Ricutta Games. Todos los derechos reservados." data-en="&copy; 2026 Ricutta Games. All rights reserved.">&copy; 2026 Ricutta Games. Todos los derechos reservados.</p>
     </footer>
 
 </div>
 
 <script>
+    let currentLang = 'es';
+
     function toggleDetails() {
         const info = document.getElementById('brayan-info');
-        const btn = document.querySelector('.btn-toggle');
+        const btn = document.getElementById('btn-details');
         if (info.style.display === 'block') {
             info.style.display = 'none';
-            btn.innerText = 'Ver detalles del juego';
+            btn.innerText = currentLang === 'es' ? 'Ver detalles del juego' : 'Show game details';
         } else {
             info.style.display = 'block';
-            btn.innerText = 'Ocultar detalles';
+            btn.innerText = currentLang === 'es' ? 'Ocultar detalles' : 'Hide details';
+        }
+    }
+
+    function toggleLanguage() {
+        currentLang = currentLang === 'es' ? 'en' : 'es';
+        const elements = document.querySelectorAll('[data-es][data-en]');
+        
+        elements.forEach(el => {
+            el.innerHTML = el.getAttribute(`data-${currentLang}`);
+        });
+
+        const info = document.getElementById('brayan-info');
+        const btn = document.getElementById('btn-details');
+        if (info.style.display === 'block') {
+            btn.innerText = currentLang === 'es' ? 'Ocultar detalles' : 'Hide details';
+        } else {
+            btn.innerText = currentLang === 'es' ? 'Ver detalles del juego' : 'Show game details';
         }
     }
 </script>
