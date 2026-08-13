@@ -23,7 +23,7 @@
         body {
             font-family: Arial, sans-serif;
             background-color: var(--bg-main);
-            background-image: url('Menu logo.png');
+            background-image: url('background-brayan-the-fox.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -96,6 +96,20 @@
             margin-bottom: 25px;
             border-left: 5px solid var(--accent);
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Ícono pequeño dentro de títulos */
+        .card-header-icon {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .game-icon-small {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            image-rendering: pixelated;
         }
 
         /* Acordeón para el juego */
@@ -173,7 +187,7 @@
     </div>
 
     <header class="profile-header">
-        <img src="8edf72df59757decc74deca1f10bb685.png" alt="Logo Ricutta" class="logo-circle">
+        <img src="logo-ricutta.png" alt="Logo Ricutta" class="logo-circle">
         <h1>Ricutta Games</h1>
         <p>Estudio independiente de desarrollo de videojuegos</p>
     </header>
@@ -189,10 +203,13 @@
         <p>Espacio dedicado al catálogo de títulos desarrollados por el estudio. ¡Conoce nuestro proyecto principal actual abajo!</p>
     </section>
 
-    <!-- CUADRADO 2: BRAYAN THE FOX CON ACORDEÓN -->
+    <!-- CUADRADO 2: BRAYAN THE FOX CON ACORDEÓN E ÍCONO -->
     <section class="card">
-        <h2>Brayan The Fox</h2>
-        <p>Nuestro proyecto estrella. ¿Quieres conocer todos los detalles de este zorro ladrón de diamantes?</p>
+        <div class="card-header-icon">
+            <img src="icon-brayan-the-fox.png" alt="Icono Brayan The Fox" class="game-icon-small">
+            <h2 style="margin: 0;">Brayan The Fox</h2>
+        </div>
+        <p style="margin-top: 15px;">Nuestro proyecto estrella. ¿Quieres conocer todos los detalles de este zorro ladrón de diamantes?</p>
         
         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
             <button class="btn-toggle" onclick="toggleDetails()">Ver detalles del juego</button>
@@ -218,7 +235,7 @@
                 </div>
                 <div>
                     <!-- Logo del juego en grande -->
-                    <img src="Logo.png" alt="Logo Brayan The Fox" class="game-logo-big">
+                    <img src="logo-brayan-the-fox.png" alt="Logo Brayan The Fox" class="game-logo-big">
                 </div>
             </div>
         </div>
