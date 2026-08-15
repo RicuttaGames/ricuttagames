@@ -108,7 +108,7 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.4);
         }
 
-        h1, h2 { font-family: 'Kaph', sans-serif; color: var(--accent); }
+        h1, h2, h3 { font-family: 'Kaph', sans-serif; color: var(--accent); }
         h1 { font-size: 2.3rem; margin: 0 0 5px 0; text-shadow: 2px 2px 0 #000; }
         .profile-header p { color: var(--text-muted); font-size: 1.05rem; margin: 0; }
 
@@ -171,9 +171,46 @@
             margin-top: 15px;
         }
 
+        /* Galería de Arte */
+        .art-gallery-section {
+            margin-top: 30px;
+            border-top: 1px solid #334155;
+            padding-top: 20px;
+        }
+
+        .art-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .art-card {
+            background: #0f172a;
+            border: 2px solid var(--accent);
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .art-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
+        }
+
+        .art-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+            image-rendering: pixelated;
+        }
+
         @media (max-width: 768px) {
             .info-grid { grid-template-columns: 1fr; }
             .lang-switch { top: 10px; right: 10px; font-size: 0.75rem; padding: 6px 10px; }
+            .art-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         /* Logo gigante del juego */
@@ -270,6 +307,25 @@
                     <img src="logo-brayan-the-fox.png" alt="Logo Brayan The Fox" class="game-logo-big">
                 </div>
             </div>
+
+            <!-- SECCIÓN DE GALERÍA DE ARTE -->
+            <div class="art-gallery-section">
+                <h3 data-es="🎨 Galería de Arte" data-en="🎨 Art Gallery">🎨 Galería de Arte</h3>
+                <p data-es="Echa un vistazo al apartado conceptual y promocional de Brayan The Fox:" data-en="Take a look at the conceptual and promotional artwork for Brayan The Fox:">Echa un vistazo al apartado conceptual y promocional de Brayan The Fox:</p>
+                
+                <div class="art-grid">
+                    <div class="art-card">
+                        <img src="Brayan-The-Fox-Art.png" alt="Arte de Brayan The Fox 1">
+                    </div>
+                    <div class="art-card">
+                        <img src="Brayan-The-Fox-Art2.png" alt="Arte de Brayan The Fox 2">
+                    </div>
+                    <div class="art-card">
+                        <img src="Brayan-The-Fox.png" alt="Brayan The Fox">
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
