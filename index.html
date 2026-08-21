@@ -18,6 +18,8 @@
             --itch-hover: #e04848;
             --yt-color: #ff0000;
             --yt-hover: #cc0000;
+            --sage-color: #eab308;
+            --sage-hover: #ca8a04;
             --text-light: #f1f5f9;
             --text-muted: #94a3b8;
         }
@@ -106,6 +108,16 @@
 
         .btn-yt:hover {
             background-color: var(--yt-hover);
+        }
+
+        /* Botón especial para SAGE */
+        .btn-sage {
+            background-color: var(--sage-color);
+            color: #0f172a;
+        }
+
+        .btn-sage:hover {
+            background-color: var(--sage-hover);
         }
 
         /* Logo Circular del Estudio */
@@ -279,6 +291,7 @@
     <!-- Botones de Redes Sociales Arriba -->
     <div class="top-socials">
         <a href="https://ricutta.itch.io/brayan-the-fox" target="_blank" class="btn-social btn-itch">🕹️ itch.io</a>
+        <a href="https://sonicfangameshq.com/forums/showcase/brayan-the-fox.3292/" target="_blank" class="btn-social btn-sage">🌀 SAGE Page</a>
         <a href="https://www.youtube.com/@RicuttaGames" target="_blank" class="btn-social btn-yt">▶️ YouTube</a>
         <a href="https://discord.gg/fpKkVwaK37" target="_blank" class="btn-social" data-es="🎮 Discord Oficial" data-en="🎮 Official Discord">🎮 Discord Oficial</a>
         <a href="https://www.tiktok.com/@ricutta?_r=1&_t=ZS-98oQ6L02vQK" target="_blank" class="btn-social">🎵 TikTok (@ricutta)</a>
@@ -314,6 +327,7 @@
         <div style="display: flex; gap: 10px; flex-wrap: wrap;">
             <button class="btn-toggle" onclick="toggleDetails()" id="btn-details" data-es="Ver detalles del juego" data-en="Show game details">Ver detalles del juego</button>
             <a href="https://ricutta.itch.io/brayan-the-fox" target="_blank" class="btn-social btn-itch" style="margin-top: 10px; display: inline-block;" data-es="🕹️ Página en itch.io" data-en="🕹️ itch.io Page">🕹️ Página en itch.io</a>
+            <a href="https://sonicfangameshq.com/forums/showcase/brayan-the-fox.3292/" target="_blank" class="btn-social btn-sage" style="margin-top: 10px; display: inline-block;" data-es="🌀 Showcase en SAGE" data-en="🌀 SAGE Showcase">🌀 Showcase en SAGE</a>
         </div>
         
         <div id="brayan-info" class="game-details">
@@ -370,8 +384,8 @@
 
     <section class="card">
         <h2 data-es="Próximos Pasos: SAGE 2026" data-en="Next Steps: SAGE 2026">Próximos Pasos: SAGE 2026</h2>
-        <p data-es="¡El estudio dirá presente! <strong>Ricutta Games</strong> participará oficialmente en la edición de <strong>SAGE 2026</strong> con la demo jugable de <em>Brayan The Fox</em>. Puedes seguir la página del proyecto directamente desde <a href='https://ricutta.itch.io/brayan-the-fox' target='_blank' style='color: var(--accent); font-weight: bold;'>nuestro itch.io</a>." data-en="The studio will be there! <strong>Ricutta Games</strong> will officially participate in <strong>SAGE 2026</strong> with the playable demo of <em>Brayan The Fox</em>. You can follow the project directly on <a href='https://ricutta.itch.io/brayan-the-fox' target='_blank' style='color: var(--accent); font-weight: bold;'>our itch.io</a>.">
-            ¡El estudio dirá presente! <strong>Ricutta Games</strong> participará oficialmente en la edición de <strong>SAGE 2026</strong> con la demo jugable de <em>Brayan The Fox</em>. Puedes seguir la página del proyecto directamente desde <a href="https://ricutta.itch.io/brayan-the-fox" target="_blank" style="color: var(--accent); font-weight: bold;">nuestro itch.io</a>.
+        <p data-es="¡El estudio dirá presente! <strong>Ricutta Games</strong> participará oficialmente en la edición de <strong>SAGE 2026</strong> con la demo jugable de <em>Brayan The Fox</em>. Puedes ver la entrada oficial y seguir el desarrollo en la <a href='https://sonicfangameshq.com/forums/showcase/brayan-the-fox.3292/' target='_blank' style='color: var(--accent); font-weight: bold;'>página oficial de la SAGE</a> o descargarlo directamente desde <a href='https://ricutta.itch.io/brayan-the-fox' target='_blank' style='color: var(--accent); font-weight: bold;'>nuestro itch.io</a>." data-en="The studio will be there! <strong>Ricutta Games</strong> will officially participate in <strong>SAGE 2026</strong> with the playable demo of <em>Brayan The Fox</em>. You can check the official entry on the <a href='https://sonicfangameshq.com/forums/showcase/brayan-the-fox.3292/' target='_blank' style='color: var(--accent); font-weight: bold;'>official SAGE page</a> or download it directly from <a href='https://ricutta.itch.io/brayan-the-fox' target='_blank' style='color: var(--accent); font-weight: bold;'>our itch.io</a>.">
+            ¡El estudio dirá presente! <strong>Ricutta Games</strong> participará oficialmente en la edición de <strong>SAGE 2026</strong> con la demo jugable de <em>Brayan The Fox</em>. Puedes ver la entrada oficial y seguir el desarrollo en la <a href="https://sonicfangameshq.com/forums/showcase/brayan-the-fox.3292/" target="_blank" style="color: var(--accent); font-weight: bold;">página oficial de la SAGE</a> o descargarlo directamente desde <a href="https://ricutta.itch.io/brayan-the-fox" target="_blank" style="color: var(--accent); font-weight: bold;">nuestro itch.io</a>.
         </p>
     </section>
 
@@ -381,6 +395,7 @@
         <p data-es="Únete y sigue de cerca el desarrollo:" data-en="Join us and follow the development closely:">Únete y sigue de cerca el desarrollo:</p>
         <div class="top-socials" style="margin-top: 15px; margin-bottom: 0;">
             <a href="https://ricutta.itch.io/brayan-the-fox" target="_blank" class="btn-social btn-itch">🕹️ itch.io</a>
+            <a href="https://sonicfangameshq.com/forums/showcase/brayan-the-fox.3292/" target="_blank" class="btn-social btn-sage">🌀 SAGE Page</a>
             <a href="https://www.youtube.com/@RicuttaGames" target="_blank" class="btn-social btn-yt">▶️ YouTube</a>
             <a href="https://discord.gg/fpKkVwaK37" target="_blank" class="btn-social" data-es="🎮 Discord" data-en="🎮 Discord">🎮 Discord</a>
             <a href="https://www.tiktok.com/@ricutta?_r=1&_t=ZS-98oQ6L02vQK" target="_blank" class="btn-social">🎵 TikTok</a>
